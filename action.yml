@@ -1,4 +1,4 @@
-name: 'Pull request bot synchronizes two services: GitHub, Moodle'
+name: 'Pull request bot synchronizes two services: GitHub, Moodle. Script 1'
 description: 'Takes data from two services and compares it, writes the result to Github (configured)'
 
 branding:
