@@ -1,1 +1,1 @@
-# moodle-github-sync-2
+# moodle-github-sync-1
