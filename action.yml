@@ -1,0 +1,16 @@
+name: 'Pull request bot synchronizes two services: GitHub, Moodle'
+description: 'Takes data from two services and compares it, writes the result to Github (configured)'
+
+branding:
+  icon: 'book'  
+  color: 'gray-dark'
+
+runs:
+  steps:
+    - 
+      name: Check env
+      uses: andymckay/cancel-action@0.2
+      if: "${{ github.event == '' || github.repository == '' || github.event == '' || github.token == '' || secrets.MOODLE_ACCESS_TOKEN == '' }}"
+    -
+      name: Run script
+      run: docker run -e GITHUB_PR_TITLE="${{ github.event.pull_request.title }}" -e GITHUB_REPO="${{ github.repository }}" -e GITHUB_PR_ID="${{ github.event.number }}" -e GITHUB_ACCESS_TOKEN="${{ github.token }}" -e MOODLE_ACCESS_TOKEN="${{ secrets.MOODLE_ACCESS_TOKEN }}" --rm fox1209/gm_scripts:1.0.0 python main.py script1
