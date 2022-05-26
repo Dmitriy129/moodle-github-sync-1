@@ -9,5 +9,5 @@ runs:
   using: 'composite'
   steps:
     -
-      run: docker run -v ${{ github.workspace }}/${{ env.PR_BOT_CONFIG_PATH }}:/home/jobuser/configs -e GITHUB_PR_TITLE="${{ github.event.pull_request.title }}" -e GITHUB_REPO="${{ github.repository }}" -e GITHUB_PR_ID="${{ github.event.number }}" -e GITHUB_ACCESS_TOKEN="${{ github.token }}" -e MOODLE_ACCESS_TOKEN="${{ env.MOODLE_ACCESS_TOKEN }}" --rm fox1209/gm_scripts:1.0.3 python main.py script1
+      run: docker run -v ${{ github.workspace }}/${{ env.PR_BOT_CONFIG_PATH }}:/home/jobuser/configs -e GITHUB_PR_TITLE="${{ github.event.pull_request.title }}" -e GITHUB_REPO="${{ github.repository }}" -e GITHUB_PR_ID="${{ github.event.number }}" -e GITHUB_ACCESS_TOKEN="${{ github.token }}" -e MOODLE_ACCESS_TOKEN="${{ env.MOODLE_ACCESS_TOKEN }}" --rm fox1209/gm_scripts:t.1 python main.py script1
       shell: bash
